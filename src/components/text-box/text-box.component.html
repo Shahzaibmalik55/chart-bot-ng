@@ -1,0 +1,19 @@
+<div class="text-box-container">
+  <div class="text-box">
+    <span class="p-input-icon-right">
+      <i
+        class="pi pi-send"
+        [class]="{ primary: input !== '', 'cursor-pointer': input !== '' }"
+        *ngIf="!isLoading"
+      ></i>
+      <i class="pi pi-spin pi-spinner" *ngIf="isLoading"></i>
+      <input
+        pInputText
+        type="text"
+        [disabled]="isLoading"
+        (keyup.enter)="onEnter()"
+        [(ngModel)]="input"
+      />
+    </span>
+  </div>
+</div>

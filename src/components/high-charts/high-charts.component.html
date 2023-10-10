@@ -1,0 +1,14 @@
+<div class="high-chart-container">
+  <div class="chart-dropdown">
+    <div class="title">You can change chart type from here:</div>
+    <p-dropdown
+      [(ngModel)]="selectedChartType"
+      (onChange)="onChartTypeChange($event)"
+      [options]="chartTypes"
+      optionLabel="title"
+      placeholder="Select chart type"
+      class="w-full md:w-14rem"
+    />
+  </div>
+  <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" />
+</div>

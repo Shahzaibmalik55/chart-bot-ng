@@ -1,0 +1,19 @@
+<div class="messages-container">
+  <div *ngFor="let message of messages">
+    <user-input-message
+      [message]="message"
+      [chartTitle]="title"
+      *ngIf="message.messageType === 'userInput'"
+    />
+    <bot-response-message
+      [message]="message"
+      [chartTitle]="title"
+      *ngIf="message.messageType === 'botResponse'"
+    />
+  </div>
+
+  <div class="loading-text" *ngIf="isLoading">
+    <span>Please hang on we're searching for you're answer</span>
+    <i class="pi pi-spin pi-spinner"></i>
+  </div>
+</div>

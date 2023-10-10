@@ -1,0 +1,27 @@
+<div class="bot-response-message">
+  <div>
+    <p-image
+      [src]="
+        'https://w7.pngwing.com/pngs/529/418/png-transparent-computer-icons-internet-bot-eyes-miscellaneous-people-sticker-thumbnail.png'
+      "
+      width="35px"
+      height="35px"
+    />
+  </div>
+
+  <div class="data">
+    <div>
+      <div class="graph-data" *ngIf="message?.data?.data?.length">
+        <high-charts
+          [data]="message?.data.data"
+          [categories]="message?.data.categories"
+          [chartTitle]="chartTitle"
+        />
+      </div>
+
+      <div *ngIf="message?.data?.message" class="message">
+        {{ message?.data.message }}
+      </div>
+    </div>
+  </div>
+</div>
